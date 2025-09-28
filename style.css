@@ -22,7 +22,7 @@
   max-width: 1920px;
   width: 100%;
   margin: 0 auto;
-  animation: catAnim 1.5s ease forwards;
+  animation: catLoop 8s ease infinite;
 }
 
 .img img {
@@ -32,12 +32,19 @@
   object-fit: cover;
 }
 
-@keyframes catAnim {
-  0% {
+/* Анимация для кота с периодом 8 секунд */
+@keyframes catLoop {
+  0%, 15% {
     transform: translate(-50%, 50%);
+    opacity: 0;
   }
-  100% {
+  20%, 35% {
     transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  40%, 100% {
+    transform: translate(-50%, 0);
+    opacity: 1;
   }
 }
 
@@ -59,13 +66,22 @@
   left: 50%;
   font-size: 750px;
   font-weight: 900;
-  transform: translate(-50%, 800px);
-  animation: errorAnim 1.5s ease forwards;
+  animation: errorLoop 8s ease infinite;
 }
 
-@keyframes errorAnim {
-  100% {
+/* Анимация для ошибки с периодом 8 секунд */
+@keyframes errorLoop {
+  0%, 15% {
+    transform: translate(-50%, 800px);
+    opacity: 0;
+  }
+  20%, 35% {
     transform: translate(-50%, -400px);
+    opacity: 1;
+  }
+  40%, 100% {
+    transform: translate(-50%, 800px);
+    opacity: 0;
   }
 }
 
@@ -85,9 +101,19 @@ a {
     font-size: 500px;
   }
   
-  @keyframes errorAnim {
-    100% {
+  /* Адаптация анимации для планшетов */
+  @keyframes errorLoop {
+    0%, 15% {
+      transform: translate(-50%, 600px);
+      opacity: 0;
+    }
+    20%, 35% {
       transform: translate(-50%, -300px);
+      opacity: 1;
+    }
+    40%, 100% {
+      transform: translate(-50%, 600px);
+      opacity: 0;
     }
   }
 }
@@ -107,9 +133,19 @@ a {
     font-size: 16px;
   }
   
-  @keyframes errorAnim {
-    100% {
+  /* Адаптация анимации для ландшафтных мобильных */
+  @keyframes errorLoop {
+    0%, 15% {
+      transform: translate(-50%, 400px);
+      opacity: 0;
+    }
+    20%, 35% {
       transform: translate(-50%, -200px);
+      opacity: 1;
+    }
+    40%, 100% {
+      transform: translate(-50%, 400px);
+      opacity: 0;
     }
   }
 }
@@ -130,14 +166,40 @@ a {
     font-size: 14px;
   }
   
-  @keyframes errorAnim {
-    100% {
+  /* Адаптация анимации для портретных мобильных */
+  @keyframes errorLoop {
+    0%, 15% {
+      transform: translate(-50%, 300px);
+      opacity: 0;
+    }
+    20%, 35% {
       transform: translate(-50%, -150px);
+      opacity: 1;
+    }
+    40%, 100% {
+      transform: translate(-50%, 300px);
+      opacity: 0;
     }
   }
   
   .img {
     width: 95%;
+  }
+  
+  /* Адаптация анимации кота для мобильных */
+  @keyframes catLoop {
+    0%, 15% {
+      transform: translate(-50%, 30%);
+      opacity: 0;
+    }
+    20%, 35% {
+      transform: translate(-50%, 0);
+      opacity: 1;
+    }
+    40%, 100% {
+      transform: translate(-50%, 0);
+      opacity: 1;
+    }
   }
 }
 
@@ -152,9 +214,19 @@ a {
     font-size: 150px;
   }
   
-  @keyframes errorAnim {
-    100% {
+  /* Адаптация анимации для очень маленьких экранов */
+  @keyframes errorLoop {
+    0%, 15% {
+      transform: translate(-50%, 200px);
+      opacity: 0;
+    }
+    20%, 35% {
       transform: translate(-50%, -100px);
+      opacity: 1;
+    }
+    40%, 100% {
+      transform: translate(-50%, 200px);
+      opacity: 0;
     }
   }
 }
@@ -177,10 +249,50 @@ a {
     font-size: 200px;
   }
   
-  @keyframes errorAnim {
-    100% {
+  /* Адаптация анимации для ландшафтной ориентации */
+  @keyframes errorLoop {
+    0%, 15% {
+      transform: translate(-50%, 200px);
+      opacity: 0;
+    }
+    20%, 35% {
       transform: translate(-50%, -120px);
+      opacity: 1;
+    }
+    40%, 100% {
+      transform: translate(-50%, 200px);
+      opacity: 0;
+    }
+  }
+  
+  /* Адаптация анимации кота для ландшафта */
+  @keyframes catLoop {
+    0%, 15% {
+      transform: translate(-50%, 20%);
+      opacity: 0;
+    }
+    20%, 35% {
+      transform: translate(-50%, 0);
+      opacity: 1;
+    }
+    40%, 100% {
+      transform: translate(-50%, 0);
+      opacity: 1;
     }
   }
 }
 
+/* Большие мониторы */
+@media (min-width: 1921px) {
+  .img {
+    max-width: 90%;
+  }
+  
+  .okak {
+    font-size: 130px;
+  }
+  
+  .error {
+    font-size: 850px;
+  }
+}
