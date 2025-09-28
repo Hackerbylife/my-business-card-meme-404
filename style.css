@@ -5,72 +5,182 @@
 }
 
 .app {
- position: relative;
- height: 100svh;
- background: #050505;
- overflow: hidden;
- font-family: "Montserrat", sans-serif;
- color: #fff;
- font-size: 18px;
+  position: relative;
+  height: 100svh;
+  background: #050505;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  font-size: 18px;
 }
 
 .img {
- position: absolute;
- bottom: 0;
- max-width: 1920px;
- margin: 0 auto;
- animation: catAnim 1.5s ease forwards;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+  animation: catAnim 1.5s ease forwards;
 }
 
 .img img {
- display: flex;
- width: 100%;
- height: 100%;
- object-fit: cover;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @keyframes catAnim {
-  0%{
-    translate: 0 50%;
+  0% {
+    transform: translate(-50%, 50%);
   }
-  100%{
-    translate: 0 0;
+  100% {
+    transform: translate(-50%, 0);
+  }
 }
- }
 
 .okak {
-    position: absolute;
-    bottom: 150px;
-    left: 50%;
-    translate: -50% 0;
-    font-weight: 900;
-    font-size: 115px;
-  }
+  position: absolute;
+  bottom: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 900;
+  font-size: 115px;
+  text-align: center;
+  width: 90%;
+  max-width: 1200px;
+}
 
-@keyframes errorAnim {
-    100% {
-      transform: translate(-50%, -400px);
-    }
-  }
-.error{
- position: absolute;
- top: 50%;
- left: 50%;
- font-size: 750px;
- font-weight: 900;
- transform: translate(-50%, 800px);
- animation: errorAnim 1.5s ease forwards;
+.error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 750px;
+  font-weight: 900;
+  transform: translate(-50%, 800px);
+  animation: errorAnim 1.5s ease forwards;
 }
 
 @keyframes errorAnim {
- 100% {
- transform: translate(-50%, -400px);
- }
+  100% {
+    transform: translate(-50%, -400px);
+  }
 }
 
 a {
- text-decoration: none;
- color: aliceblue;
+  text-decoration: none;
+  color: aliceblue;
 }
 
+/* Планшеты */
+@media (max-width: 1024px) {
+  .okak {
+    font-size: 80px;
+    bottom: 120px;
+  }
+  
+  .error {
+    font-size: 500px;
+  }
+  
+  @keyframes errorAnim {
+    100% {
+      transform: translate(-50%, -300px);
+    }
+  }
+}
+
+/* Мобильные устройства (ландшафт) */
+@media (max-width: 768px) {
+  .okak {
+    font-size: 60px;
+    bottom: 100px;
+  }
+  
+  .error {
+    font-size: 350px;
+  }
+  
+  .app {
+    font-size: 16px;
+  }
+  
+  @keyframes errorAnim {
+    100% {
+      transform: translate(-50%, -200px);
+    }
+  }
+}
+
+/* Мобильные устройства (портрет) */
+@media (max-width: 480px) {
+  .okak {
+    font-size: 40px;
+    bottom: 80px;
+    width: 95%;
+  }
+  
+  .error {
+    font-size: 200px;
+  }
+  
+  .app {
+    font-size: 14px;
+  }
+  
+  @keyframes errorAnim {
+    100% {
+      transform: translate(-50%, -150px);
+    }
+  }
+  
+  .img {
+    width: 95%;
+  }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 320px) {
+  .okak {
+    font-size: 32px;
+    bottom: 60px;
+  }
+  
+  .error {
+    font-size: 150px;
+  }
+  
+  @keyframes errorAnim {
+    100% {
+      transform: translate(-50%, -100px);
+    }
+  }
+}
+
+/* Высокие экраны */
+@media (min-height: 800px) and (max-width: 1024px) {
+  .okak {
+    bottom: 200px;
+  }
+}
+
+/* Ориентация ландшафт для мобильных */
+@media (max-height: 500px) and (orientation: landscape) {
+  .okak {
+    font-size: 40px;
+    bottom: 80px;
+  }
+  
+  .error {
+    font-size: 200px;
+  }
+  
+  @keyframes errorAnim {
+    100% {
+      transform: translate(-50%, -120px);
+    }
+  }
+}
 
